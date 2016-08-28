@@ -1,0 +1,21 @@
+<template name="NoteOverview">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{name}} - {{fromNow createdAt}}
+      <i class="fa fa-pencil pull-right"></i>
+      <i class="fa fa-trash pull-right"></i>
+    </div>
+    {{#unless editMode}}
+      <div class="panel-body">
+        <ul class="list-group">
+          {{#each items}}
+            <li class="list-group-item">{{name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{else}}
+      {{> quickForm collection="Notes" id="updateNoteId" class="updateNoteForm"
+        type="update" doc=this autosave=true}}
+    {{/unless}}
+  </div>
+</template>

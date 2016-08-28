@@ -1,0 +1,22 @@
+<template name="Notes">
+
+  {{#if newNote}}
+    <button class="cancel-new-note">Cancel</button>
+    {{> NewNote}}
+  {{else}}
+    <button class="new-note">New Note</button>
+  {{/if}}
+
+  <section>
+    {{#if Template.subscriptionsReady}}
+    <ul class="list-group">
+      {{#each notes}}
+        <li class="list-group-item">{{> NoteOverview}}</li>
+      {{/each}}
+    </ul>
+    {{else}}
+      <p>Loading</p>
+    {{/if}}
+  </section>
+
+</template>
