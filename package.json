@@ -1,5 +1,7 @@
 {
   "name": "my-notes",
+  "version": "0.0.1",
+  "description" : "A web app like google keep",
   "private": true,
   "scripts": {
     "start": "meteor run"
